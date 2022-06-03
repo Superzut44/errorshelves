@@ -13,7 +13,7 @@ import { ErrorsService } from './services/errors.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
