@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import firebase from "firebase/compat/app"
+
 
 @Component({
   selector: 'app-root',
@@ -10,17 +10,15 @@ import { getAnalytics } from "firebase/analytics";
 export class AppComponent {
   constructor() {
     const firebaseConfig = {
-      apiKey: "AIzaSyB6jo62IcUsqIrGLfLlj3HCWqNeuRMnTd8",
-      authDomain: "errorshelves.firebaseapp.com",
-      projectId: "errorshelves",
-      storageBucket: "errorshelves.appspot.com",
-      messagingSenderId: "740667656459",
-      appId: "1:740667656459:web:ba9b29258b115f7644fa0e",
-      measurementId: "G-DBGTKH501C"
+      apiKey: "AIzaSyD1qd7LRfH_K8WSBs5oeUd6zay0LOzpM4M",
+      authDomain: "errorshelves-7be8b.firebaseapp.com",
+      projectId: "errorshelves-7be8b",
+      storageBucket: "errorshelves-7be8b.appspot.com",
+      messagingSenderId: "764681123301",
+      appId: "1:764681123301:web:04df77e654b755df9aab0c"
     };
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    firebase.initializeApp(firebaseConfig);
   }
 }
