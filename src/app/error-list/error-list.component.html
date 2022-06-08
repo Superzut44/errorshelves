@@ -1,1 +1,19 @@
-<p>error-list works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Vos erreurs</h2>
+    <div class="list-group">
+      <button class="list-group-item"
+              *ngFor="let error of errors; let i = index"
+              (click)="onViewError(i)">
+        <h3 class="list-group-item-heading">
+          {{ error.title }}
+          <button class="btn btn-default pull-right" (click)="onDeleteError(error)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+      <p class="list-group-item-text">{{ error.author }}</p>
+    </button>
+    </div>
+    <button class="btn btn-primary" (click)="onNewError()">Nouvel erreur</button>
+  </div>
+</div>

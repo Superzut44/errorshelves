@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import firebase from "firebase/compat/app"
+import firebase from "firebase/compat/app";
+import { getAnalytics } from "firebase/analytics";
 
 @Component({
   selector: 'app-root',
@@ -9,16 +10,19 @@ import firebase from "firebase/compat/app"
 export class AppComponent {
   constructor() {
     const firebaseConfig = {
-      apiKey: "AIzaSyD1qd7LRfH_K8WSBs5oeUd6zay0LOzpM4M",
-      authDomain: "errorshelves-7be8b.firebaseapp.com",
-      projectId: "errorshelves-7be8b",
-      storageBucket: "errorshelves-7be8b.appspot.com",
-      messagingSenderId: "764681123301",
-      appId: "1:764681123301:web:04df77e654b755df9aab0c"
+      apiKey: "AIzaSyAPUm3qyvpKX4gsuYrks1Fii8uzBAG5ZMM",
+      authDomain: "errorshelves-e5108.firebaseapp.com",
+      databaseURL: "https://errorshelves-e5108-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "errorshelves-e5108",
+      storageBucket: "errorshelves-e5108.appspot.com",
+      messagingSenderId: "824566667753",
+      appId: "1:824566667753:web:a95c98aa909d55069d5378",
+      measurementId: "G-8XJSY4J69B"
     };
 
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    const app = firebase.initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
 
   }
 }
