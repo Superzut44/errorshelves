@@ -12,6 +12,9 @@ import { ErrorsService } from 'src/app/services/errors.service';
 export class ErrorFormComponent implements OnInit {
 
   errorForm!: FormGroup;
+  fileIsUploading = false;
+  fileUrl!: string;
+  fileUploaded = false;
 
   constructor(private formBuilder: FormBuilder,
               private errorsService: ErrorsService,
@@ -32,8 +35,26 @@ export class ErrorFormComponent implements OnInit {
     const title = this.errorForm.get('title')?.value;
     const author = this.errorForm.get('author')?.value;
     const newError = new Error(title, author);
+    if(this.fileUrl && this.fileUrl !== '') {
+      newError.photo = this.fileUrl;
+    }
     this.errorsService.createNewError(newError);
     this.router.navigate(['/errors']);
+  }
+
+  onUploadFile(file: File) {
+    this.fileIsUploading = true;
+    this.errorsService.uploadFile(file).then(
+      (url: string) => {
+        this.fileUrl = url;
+        this.fileIsUploading = false;
+        this.fileUploaded = true;
+      }
+    )
+  }
+
+  detectFiles(event: any) {
+    this.onUploadFile(event.target.files[0]);
   }
 
 }
