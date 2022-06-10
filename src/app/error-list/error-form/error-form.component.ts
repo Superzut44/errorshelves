@@ -29,8 +29,8 @@ export class ErrorFormComponent implements OnInit {
       title: ['', Validators.required],
       definition: ['', Validators.required],
       solution: ['', Validators.required],
-      definitionCode: ['', Validators.required],
-      solutionCode: ['', Validators.required],
+      definitionCode: [''],
+      solutionCode: [''],
     });
   }
 
