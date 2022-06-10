@@ -17,7 +17,7 @@ export class SingleErrorComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.error = new Error('', '');
+    this.error = new Error('', '', '');
     const id = this.route.snapshot.params['id'];
     this.errorsService.getSingleError(+id).then(
       (error: Error) => {
