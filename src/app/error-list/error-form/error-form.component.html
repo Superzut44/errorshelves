@@ -7,12 +7,20 @@
         <input type="text" class="form-control" id="title" formControlName="title">
       </div>
       <div class="form-group">
-        <label for="definition">Auteur</label>
+        <label for="definition" [ngStyle]="{color:'red'}">Définition</label>
         <input type="text" class="form-control" id="definition" formControlName="definition">
       </div>
       <div class="form-group">
-        <label for="solution">Solution</label>
+        <label for="definitionCode" [ngStyle]="{color:'red'}">Code</label>
+        <input type="text" class="form-control" id="definitionCode" formControlName="definitionCode">
+      </div>
+      <div class="form-group">
+        <label for="solution" [ngStyle]="{color:'green'}">Solution</label>
         <input type="text" class="form-control" id="solution" formControlName="solution">
+      </div>
+      <div class="form-group">
+        <label for="solutionCode" [ngStyle]="{color:'green'}">Code</label>
+        <input type="text" class="form-control" id="solutionCode" formControlName="solutionCode">
       </div>
       <div class="form-group">
         <h4>Ajouter une photo</h4>

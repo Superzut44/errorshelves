@@ -1,9 +1,12 @@
-<div class="row">
+<div class="row" [ngStyle]="{border:'.2px solid', padding:'2rem'}">
   <div class="col-xs-12">
     <img style="max-width:400px" *ngIf="error.photo" [src]="error.photo">
     <h1>{{ error.title }}</h1>
     <h3 [ngStyle]="{color:'red'}">{{ error.definition }}</h3>
+    <h3 [ngStyle]="{border:'.2px solid red', padding:'2rem'}">{{ error.definitionCode }}</h3>
     <h3 [ngStyle]="{color:'green'}">{{ error.solution }}</h3>
-    <button class="btn btn-default" (click)="onBack()">Retour</button>
+    <h3 [ngStyle]="{border:'.2px solid green', padding:'2rem'}">{{ error.solutionCode }}</h3>
+
   </div>
 </div>
+<button class="btn btn-default" (click)="onBack()">Retour</button>

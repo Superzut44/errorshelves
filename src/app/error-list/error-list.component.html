@@ -11,7 +11,7 @@
             <span class="glyphicon glyphicon-minus"></span>
           </button>
         </h3>
-      <p class="list-group-item-text">Description : {{ error.definition }}</p>
+      <p class="list-group-item-text" [ngStyle]="{color:'red'}">{{ error.definition }}</p>
     </button>
     </div>
     <button class="btn btn-primary" (click)="onNewError()">Nouvel erreur</button>

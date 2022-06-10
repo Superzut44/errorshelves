@@ -28,7 +28,9 @@ export class ErrorFormComponent implements OnInit {
     this.errorForm = this.formBuilder.group( {
       title: ['', Validators.required],
       definition: ['', Validators.required],
-      solution: ['', Validators.required]
+      solution: ['', Validators.required],
+      definitionCode: ['', Validators.required],
+      solutionCode: ['', Validators.required],
     });
   }
 
@@ -36,7 +38,9 @@ export class ErrorFormComponent implements OnInit {
     const title = this.errorForm.get('title')?.value;
     const definition = this.errorForm.get('definition')?.value;
     const solution = this.errorForm.get('solution')?.value;
-    const newError = new Error(title, definition, solution);
+    const definitionCode = this.errorForm.get('definitionCode')?.value;
+    const solutionCode = this.errorForm.get('solutionCode')?.value;
+    const newError = new Error(title, definition, solution, definitionCode, solutionCode);
     if(this.fileUrl && this.fileUrl !== '') {
       newError.photo = this.fileUrl;
     }
